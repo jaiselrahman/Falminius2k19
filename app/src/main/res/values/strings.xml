@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Flaminius2k19</string>
+
+    <string name="venue_address">12, Vembuliamman Koil St,\nWest K. K. Nagar, Chennai- 78</string>
+    <string name="venue_location">https://goo.gl/maps/nsrruRShrsbV23hF6</string>
+    <string name="register">Register</string>
+    <string name="venue">Venue</string>
+    <string name="sympo_tagline">A National level Symposium\nAt Meenakshi College of Engineering</string>
 </resources>

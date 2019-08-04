@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
         setUpToolbar();
 
+        setUpFollowButtons();
+
         BoomMenuButton boom = findViewById(R.id.boom_menu);
         for (int i = 0; i < boom.getPiecePlaceEnum().pieceNumber(); i++) {
             HamButton.Builder builder = new HamButton.Builder()
@@ -64,6 +66,40 @@ public class MainActivity extends AppCompatActivity {
                 } else if (!TextUtils.isEmpty(collapsingToolbar.getTitle())) {
                     collapsingToolbar.setTitle("");
                 }
+            }
+        });
+    }
+
+    private void setUpFollowButtons() {
+        findViewById(R.id.follow_facebook).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.facebook_page)));
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.follow_instagram).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.instagram_page)));
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.follow_twitter).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.twitter_page)));
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.follow_website).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.website_page)));
+                startActivity(intent);
             }
         });
     }

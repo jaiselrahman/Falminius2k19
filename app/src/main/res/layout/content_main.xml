@@ -52,7 +52,6 @@
             </com.facebook.shimmer.ShimmerFrameLayout>
         </androidx.cardview.widget.CardView>
 
-
         <androidx.cardview.widget.CardView
             android:id="@+id/registerShimmer"
             android:layout_width="0dp"
@@ -94,7 +93,7 @@
             android:layout_marginTop="10dp"
             app:cardCornerRadius="20dp"
             app:cardElevation="5dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/follow"
             app:layout_constraintTop_toBottomOf="@id/registerShimmer">
 
             <LinearLayout
@@ -129,6 +128,98 @@
                     android:text="@string/venue_address"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/follow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/venue">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/selectableItemBackground"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/ic_follow"
+                    android:drawableRight="@drawable/ic_follow"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:text="@string/follow"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:background="@android:color/darker_gray" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="5dp">
+
+                    <ImageView
+                        android:id="@+id/follow_facebook"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="?attr/selectableItemBackground"
+                        android:contentDescription="@string/follow_facebook"
+                        android:src="@drawable/ic_facebook"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/follow_instagram"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/follow_instagram"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="?attr/selectableItemBackground"
+                        android:contentDescription="@string/follow_instagram"
+                        android:src="@drawable/ic_instagram"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/follow_twitter"
+                        app:layout_constraintStart_toEndOf="@id/follow_facebook"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/follow_twitter"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="?attr/selectableItemBackground"
+                        android:contentDescription="@string/follow_twitter"
+                        android:src="@drawable/ic_twitter"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/follow_website"
+                        app:layout_constraintStart_toEndOf="@id/follow_instagram"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <ImageView
+                        android:id="@+id/follow_website"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="?attr/selectableItemBackground"
+                        android:contentDescription="@string/follow_website"
+                        android:src="@drawable/ic_website"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/follow_twitter"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 

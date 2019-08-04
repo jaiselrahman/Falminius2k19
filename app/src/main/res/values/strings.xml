@@ -6,4 +6,7 @@
     <string name="register">Register</string>
     <string name="venue">Venue</string>
     <string name="sympo_tagline">A National level Symposium\nAt Meenakshi College of Engineering</string>
+    <string name="splash_msg" ><![CDATA[
+    <HelloWorld/>
+    ]]></string>
 </resources>

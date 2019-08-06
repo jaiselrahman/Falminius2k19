@@ -23,4 +23,12 @@
     <string name="technical_events">Technical events</string>
     <string name="coordinators">Coordinators</string>
     <string name="gallery">Gallery</string>
+
+    <string-array name="m">
+        <item>a</item>
+        <item>b</item>
+        <item>c</item>
+        <item>d</item>
+        <item>e</item>
+    </string-array>
 </resources>

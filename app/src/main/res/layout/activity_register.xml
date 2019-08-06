@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/activity_bg"
+    tools:context=".RegisterActivity">
+
+    <com.ramotion.directselect.DSListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:visibility="invisible"
+        app:cell_font_size="8sp"
+        app:data_array="@array/m"
+        app:picker_box_view="@id/event"
+        app:scale_animations="true"
+        app:scale_animations_factor="1.3"
+        app:scale_animations_pivot_center="false"
+        app:selector_background="@color/hintColor" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="10dp">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/app_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-10dp"
+                android:layout_marginEnd="-10dp"
+                android:layout_marginBottom="10dp"
+                android:theme="@style/AppTheme.AppBarOverlay">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <TextView
+                style="@style/Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/name"
+                android:text="Name" />
+
+            <EditText
+                android:id="@+id/name"
+                style="@style/Field"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:inputType="textPersonName" />
+
+            <TextView
+                style="@style/Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/email"
+                android:text="Email" />
+
+            <EditText
+                android:id="@+id/email"
+                style="@style/Field"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:inputType="textEmailAddress" />
+
+            <TextView
+                style="@style/Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/department"
+                android:text="Department" />
+
+            <com.jaiselrahman.hintspinner.HintSpinner
+                android:id="@+id/department"
+                style="@style/Field"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp" />
+
+            <TextView
+                style="@style/Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/year"
+                android:text="Year" />
+
+            <com.jaiselrahman.hintspinner.HintSpinner
+                android:id="@+id/year"
+                style="@style/Field"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp" />
+
+            <TextView
+                style="@style/Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/count"
+                android:text="Person count" />
+
+            <com.ramotion.fluidslider.FluidSlider
+                android:id="@+id/count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-16dp"
+                android:layout_marginBottom="5dp"
+                app:bar_color="@color/hintColor"
+                app:bar_text_color="@color/labelColor"
+                app:bubble_color="@color/labelColor"
+                app:end_text="10"
+                app:initial_position="0"
+                app:size="small"
+                app:start_text="0"
+                app:text_size="16sp" />
+
+            <TextView
+                style="@style/Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/foodType"
+                android:text="Food Preferences" />
+
+            <com.jaiselrahman.hintspinner.HintSpinner
+                android:id="@+id/foodType"
+                style="@style/Field"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginBottom="5dp"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp" />
+
+            <TextView
+                style="@style/Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/event"
+                android:text="Event" />
+
+            <com.ramotion.directselect.DSDefaultPickerBox
+                android:id="@+id/event"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:background="@color/hintColor"
+                android:padding="15dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/primary_btn"
+                android:text="@string/register"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
+

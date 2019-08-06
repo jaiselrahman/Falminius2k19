@@ -2,9 +2,12 @@ package app.flaminius.flaminius2k19;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Gravity;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +17,7 @@ import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.nightonke.boommenu.BoomButtons.HamButton;
 import com.nightonke.boommenu.BoomMenuButton;
+import com.nightonke.boommenu.Util;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,15 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         setUpFollowButtons();
 
-        BoomMenuButton boom = findViewById(R.id.boom_menu);
-        for (int i = 0; i < boom.getPiecePlaceEnum().pieceNumber(); i++) {
-            HamButton.Builder builder = new HamButton.Builder()
-                    .normalImageRes(R.drawable.ic_launcher_background)
-                    .normalText("Butter Doesn't fly!")
-                    .subNormalText("Little butter Doesn't fly, either!")
-                    .pieceColor(Color.WHITE);
-            boom.addBuilder(builder);
-        }
+        setUpBoomMenu();
 
         findViewById(R.id.venue).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +39,58 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private void setUpBoomMenu() {
+        BoomMenuButton boom = findViewById(R.id.boom_menu);
+
+        int buttonCornerRadius = Util.dp2px(50);
+        int textSize = 18;
+        Rect textPadding = new Rect(0, Util.dp2px(5.5f), 0, 0);
+
+        boom.addBuilder(new HamButton.Builder()
+                .normalTextRes(R.string.nontechnical_events)
+                .textSize(textSize)
+                .textPadding(textPadding)
+                .normalColorRes(R.color.nonTechnicalEvent)
+                .typeface(Typeface.DEFAULT_BOLD)
+                .normalImageRes(R.drawable.ic_nontechnical_event)
+                .containsSubText(false)
+                .buttonCornerRadius(buttonCornerRadius)
+                .pieceColor(Color.WHITE));
+
+        boom.addBuilder(new HamButton.Builder()
+                .normalTextRes(R.string.technical_events)
+                .textSize(textSize)
+                .textPadding(textPadding)
+                .normalColorRes(R.color.nonTechnicalEvent)
+                .typeface(Typeface.DEFAULT_BOLD)
+                .normalImageRes(R.drawable.ic_technical_event)
+                .containsSubText(false)
+                .buttonCornerRadius(buttonCornerRadius)
+                .pieceColor(Color.WHITE));
+
+        boom.addBuilder(new HamButton.Builder()
+                .normalTextRes(R.string.coordinators)
+                .textSize(textSize)
+                .textPadding(textPadding)
+                .normalColorRes(R.color.coordinators)
+                .typeface(Typeface.DEFAULT_BOLD)
+                .normalImageRes(R.drawable.ic_coordinators)
+                .containsSubText(false)
+                .buttonCornerRadius(buttonCornerRadius)
+                .pieceColor(Color.WHITE));
+
+        boom.addBuilder(new HamButton.Builder()
+                .normalTextRes(R.string.gallery)
+                .textSize(textSize)
+                .textPadding(textPadding)
+                .normalColorRes(R.color.gallery)
+                .typeface(Typeface.DEFAULT_BOLD)
+                .normalImageRes(R.drawable.ic_gallery)
+                .containsSubText(false)
+                .buttonCornerRadius(buttonCornerRadius)
+                .pieceColor(Color.WHITE));
     }
 
     private void setUpToolbar() {

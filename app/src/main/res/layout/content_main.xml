@@ -230,7 +230,7 @@
             android:scaleY="0.9"
             app:bmb_buttonEnum="ham"
             app:bmb_buttonPlaceEnum="buttonPlace_ham_4"
-            app:bmb_dimColor="#DF000000"
+            app:bmb_dimColor="#EE000000"
             app:bmb_normalColor="@color/colorPrimary"
             app:bmb_piecePlaceEnum="piecePlace_ham_4"
             app:bmb_shadowColor="#33000000"

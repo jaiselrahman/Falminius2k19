@@ -8,6 +8,7 @@
     tools:context=".RegisterActivity">
 
     <com.ramotion.directselect.DSListView
+        android:id="@+id/event_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/white"
@@ -55,35 +56,67 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:labelFor="@id/name"
-                android:text="Name" />
+                android:text="@string/name" />
 
             <EditText
                 android:id="@+id/name"
                 style="@style/Field"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                tools:ignore="Autofill,LabelFor" />
 
             <TextView
                 style="@style/Label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:labelFor="@id/email"
-                android:text="Email" />
+                android:text="@string/email" />
 
             <EditText
                 android:id="@+id/email"
                 style="@style/Field"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                tools:ignore="Autofill,LabelFor" />
+
+            <TextView
+                style="@style/Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/phone"
+                android:text="@string/phone" />
+
+            <EditText
+                android:id="@+id/phone"
+                style="@style/Field"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:inputType="phone"
+                tools:ignore="Autofill,LabelFor" />
+
+            <TextView
+                style="@style/Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/college"
+                android:text="@string/college" />
+
+            <EditText
+                android:id="@+id/college"
+                style="@style/Field"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:inputType="textPersonName"
+                tools:ignore="Autofill,LabelFor" />
 
             <TextView
                 style="@style/Label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:labelFor="@id/department"
-                android:text="Department" />
+                android:text="@string/department" />
 
             <com.jaiselrahman.hintspinner.HintSpinner
                 android:id="@+id/department"
@@ -94,26 +127,15 @@
                 android:paddingEnd="0dp" />
 
             <TextView
+                android:id="@+id/person_count_info"
                 style="@style/Label"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:labelFor="@+id/year"
-                android:text="Year" />
-
-            <com.jaiselrahman.hintspinner.HintSpinner
-                android:id="@+id/year"
-                style="@style/Field"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:paddingStart="0dp"
-                android:paddingEnd="0dp" />
-
-            <TextView
-                style="@style/Label"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_info"
+                android:drawableRight="@drawable/ic_info"
+                android:drawablePadding="5dp"
                 android:labelFor="@id/count"
-                android:text="Person count" />
+                android:text="@string/person_count" />
 
             <com.ramotion.fluidslider.FluidSlider
                 android:id="@+id/count"
@@ -124,21 +146,22 @@
                 app:bar_color="@color/hintColor"
                 app:bar_text_color="@color/labelColor"
                 app:bubble_color="@color/labelColor"
-                app:end_text="10"
+                app:bubble_text_color="@android:color/white"
+                app:end_text="5"
                 app:initial_position="0"
                 app:size="small"
                 app:start_text="0"
-                app:text_size="16sp" />
+                app:text_size="14sp" />
 
             <TextView
                 style="@style/Label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:labelFor="@id/foodType"
-                android:text="Food Preferences" />
+                android:labelFor="@id/foodPrefs"
+                android:text="@string/food_preferences" />
 
             <com.jaiselrahman.hintspinner.HintSpinner
-                android:id="@+id/foodType"
+                android:id="@+id/foodPrefs"
                 style="@style/Field"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
@@ -151,14 +174,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:labelFor="@id/event"
-                android:text="Event" />
+                android:text="@string/event" />
 
             <com.ramotion.directselect.DSDefaultPickerBox
                 android:id="@+id/event"
+                style="@style/Field"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
-                android:background="@color/hintColor"
                 android:padding="15dp" />
 
             <Button
@@ -166,6 +189,7 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/primary_btn"
+                android:onClick="onRegisterClick"
                 android:text="@string/register"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white" />

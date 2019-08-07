@@ -24,11 +24,43 @@
     <string name="coordinators">Coordinators</string>
     <string name="gallery">Gallery</string>
 
+    <string name="person_count_info">Students with same preferences can register commonly or they can register individually.</string>
+
+    <string name="event">Event</string>
+    <string name="food_preferences">Food Preferences</string>
+    <string name="person_count">Person count</string>
+    <string name="department">Department</string>
+    <string name="college">College</string>
+    <string name="email">Email</string>
+    <string name="name">Name</string>
+    <string name="phone">Phone</string>
+
+    <string name="error_enter_name">Enter your name</string>
+    <string name="error_enter_college">Enter you college name</string>
+    <string name="error_enter_email">Enter valid email</string>
+    <string name="error_select_valid_department">Select your department</string>
+    <string name="error_select_valid_person_count">Select person count (1&#8211;5)</string>
+    <string name="error_select_valid_food_pref">Select you food preference</string>
+    <string name="error_enter_phone">Enter your phone number</string>
+
     <string-array name="m">
         <item>a</item>
         <item>b</item>
         <item>c</item>
         <item>d</item>
         <item>e</item>
+    </string-array>
+
+    <string-array name="departments">
+        <item>B.Tech. Information Technology</item>
+        <item>B.E. Computer Science and Engineering</item>
+        <item>B.C.A</item>
+        <item>M.C.A</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="food_prefs">
+        <item>Veg</item>
+        <item>Non Veg</item>
     </string-array>
 </resources>

@@ -7,8 +7,6 @@ import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.Gravity;
-import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -19,7 +17,10 @@ import com.nightonke.boommenu.BoomButtons.HamButton;
 import com.nightonke.boommenu.BoomMenuButton;
 import com.nightonke.boommenu.Util;
 
+import app.flaminius.flaminius2k19.event.EventListActivity;
+
 public class MainActivity extends AppCompatActivity {
+    private final static int LAUNCH_DELAY = 120;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +60,12 @@ public class MainActivity extends AppCompatActivity {
                 .normalImageRes(R.drawable.ic_nontechnical_event)
                 .containsSubText(false)
                 .buttonCornerRadius(buttonCornerRadius)
-                .pieceColor(Color.WHITE));
+                .pieceColor(Color.WHITE)
+                .listener(index -> boom.postDelayed(() -> {
+                    Intent intent = new Intent(this, EventListActivity.class);
+                    intent.putExtra(EventListActivity.DEFAULT, EventListActivity.NON_TECHNICAL);
+                    startActivity(intent);
+                }, LAUNCH_DELAY)));
 
         boom.addBuilder(new HamButton.Builder()
                 .normalTextRes(R.string.technical_events)
@@ -70,7 +76,12 @@ public class MainActivity extends AppCompatActivity {
                 .normalImageRes(R.drawable.ic_technical_event)
                 .containsSubText(false)
                 .buttonCornerRadius(buttonCornerRadius)
-                .pieceColor(Color.WHITE));
+                .pieceColor(Color.WHITE)
+                .listener(index -> boom.postDelayed(() -> {
+                    Intent intent = new Intent(this, EventListActivity.class);
+                    intent.putExtra(EventListActivity.DEFAULT, EventListActivity.TECHNICAL);
+                    startActivity(intent);
+                }, LAUNCH_DELAY)));
 
         boom.addBuilder(new HamButton.Builder()
                 .normalTextRes(R.string.coordinators)

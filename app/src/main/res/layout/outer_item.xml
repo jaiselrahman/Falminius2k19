@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false">
+
+    <com.ramotion.garlandview.inner.InnerRecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="25dp" />
+
+    <FrameLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:clipChildren="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <TextView
+                android:id="@+id/header_text"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/event_header_bg"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/nontechnical_events"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textColor="@android:color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/header_image"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:contentDescription="@string/nontechnical_events"
+                android:src="@drawable/ic_nontechnical_event"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <View
+            android:id="@+id/header_alpha"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/white_corners"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+</FrameLayout>

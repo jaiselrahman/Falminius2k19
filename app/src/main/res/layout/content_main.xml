@@ -93,10 +93,10 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="3dp"
                     android:paddingBottom="2dp"
-                    android:textStyle="bold"
                     android:text="@string/venue_name"
                     android:textAlignment="center"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -246,6 +246,7 @@
             app:bmb_buttonEnum="ham"
             app:bmb_buttonPlaceEnum="buttonPlace_ham_4"
             app:bmb_dimColor="#EE000000"
+            app:bmb_hideDuration="250"
             app:bmb_normalColor="@color/colorPrimary"
             app:bmb_piecePlaceEnum="piecePlace_ham_4"
             app:bmb_shadowColor="#33000000"

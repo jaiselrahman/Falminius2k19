@@ -1,5 +1,8 @@
 package app.flaminius.flaminius2k19;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
@@ -11,24 +14,23 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.core.util.PatternsCompat;
 
 import com.jaiselrahman.hintspinner.HintSpinner;
 import com.jaiselrahman.hintspinner.HintSpinnerAdapter;
-import com.ramotion.directselect.DSListView;
 import com.ramotion.fluidslider.FluidSlider;
 
-import java.util.regex.Pattern;
-
+import app.flaminius.flaminius2k19.util.RegisterTask;
+import app.flaminius.flaminius2k19.util.ReverseInterpolator;
+import br.com.simplepass.loadingbutton.customViews.CircularProgressButton;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 
 public class RegisterActivity extends AppCompatActivity {
     private EditText name, email, phone, college;
-    private DSListView eventList;
 
     private String department, foodPref;
-
     private int personCount = 0;
 
     @Override
@@ -50,7 +52,6 @@ public class RegisterActivity extends AppCompatActivity {
 
         setUpPersonCountSlider();
 
-        eventList = findViewById(R.id.event_list);
     }
 
     private void setUpFoodPrefSpinner() {
@@ -116,6 +117,44 @@ public class RegisterActivity extends AppCompatActivity {
     public void onRegisterClick(View view) {
         if (!validate()) return;
 
+        final CircularProgressButton btn = (CircularProgressButton) view;
+
+        btn.startMorphAnimation();
+
+        new RegisterTask().setName(name.getText().toString())
+                .setEmail(email.getText().toString())
+                .setPhone(phone.getText().toString())
+                .setCollege(college.getText().toString())
+                .setDepartment(department)
+                .setPersonCount(String.valueOf(personCount))
+                .setFoodPreference(foodPref)
+                .register(this, new RegisterTask.OnCompletionListener() {
+                    @Override
+                    public void onSuccess() {
+                        btn.doneLoadingAnimation(ContextCompat.getColor(RegisterActivity.this, R.color.colorPrimary), BitmapFactory.decodeResource(getResources(), R.drawable.ic_done_white_48dp));
+
+                        btn.animate().alpha(0)
+                                .scaleYBy(10)
+                                .scaleXBy(10)
+                                .translationYBy(-200)
+                                .setDuration(1000)
+                                .setListener(new AnimatorListenerAdapter() {
+                                    @Override
+                                    public void onAnimationEnd(Animator animation) {
+                                        animation.removeListener(this);
+                                        animation.setDuration(0);
+                                        animation.setInterpolator(new ReverseInterpolator());
+                                        animation.start();
+                                    }
+                                });
+                    }
+
+                    @Override
+                    public void onError(Exception e) {
+                        Toast.makeText(RegisterActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                        btn.startMorphRevertAnimation();
+                    }
+                });
     }
 
     private boolean validate() {
@@ -166,7 +205,6 @@ public class RegisterActivity extends AppCompatActivity {
             return false;
         }
 
-        eventList.getSelectedItem();
         return true;
     }
 }

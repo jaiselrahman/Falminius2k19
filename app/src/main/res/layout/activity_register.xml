@@ -5,25 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/activity_bg"
+    android:clipChildren="false"
     tools:context=".RegisterActivity">
 
-    <com.ramotion.directselect.DSListView
-        android:id="@+id/event_list"
+    <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/white"
-        android:visibility="invisible"
-        app:cell_font_size="8sp"
-        app:data_array="@array/m"
-        app:picker_box_view="@id/event"
-        app:scale_animations="true"
-        app:scale_animations_factor="1.3"
-        app:scale_animations_pivot_center="false"
-        app:selector_background="@color/hintColor" />
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:clipChildren="false">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -141,7 +130,7 @@
                 android:id="@+id/count"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-16dp"
+                android:layout_marginTop="-20dp"
                 android:layout_marginBottom="5dp"
                 app:bar_color="@color/hintColor"
                 app:bar_text_color="@color/labelColor"
@@ -169,31 +158,56 @@
                 android:paddingStart="0dp"
                 android:paddingEnd="0dp" />
 
-            <TextView
-                style="@style/Label"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:labelFor="@id/event"
-                android:text="@string/event" />
+            <!--<TextView-->
+            <!--style="@style/Label"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:labelFor="@id/event"-->
+            <!--android:text="@string/event" />-->
 
-            <com.ramotion.directselect.DSDefaultPickerBox
-                android:id="@+id/event"
-                style="@style/Field"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:padding="15dp" />
+            <!--<com.ramotion.directselect.DSDefaultPickerBox-->
+            <!--android:id="@+id/event"-->
+            <!--style="@style/Field"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="5dp"-->
+            <!--android:padding="15dp" />-->
 
-            <Button
+            <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+                android:id="@+id/register"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/primary_btn"
                 android:onClick="onRegisterClick"
                 android:text="@string/register"
                 android:textAllCaps="false"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                app:finalCornerAngle="20dp"
+                app:initialCornerAngle="2dp"
+                app:spinning_bar_color="#FFF"
+                app:spinning_bar_padding="6dp"
+                app:spinning_bar_width="4dp" />
         </LinearLayout>
     </ScrollView>
+
+    <!--<com.ramotion.directselect.DSListView-->
+    <!--android:id="@+id/event_list"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="@android:color/white"-->
+    <!--android:clickable="true"-->
+    <!--android:focusable="true"-->
+    <!--android:visibility="invisible"-->
+    <!--app:cell_font_size="8sp"-->
+    <!--app:data_array="@array/m"-->
+    <!--app:picker_box_view="@id/event"-->
+    <!--app:scale_animations="true"-->
+    <!--app:scale_animations_factor="1.3"-->
+    <!--app:scale_animations_pivot_center="false"-->
+    <!--app:selector_background="@color/hintColor"-->
+    <!--tools:ignore="UnusedAttribute" />-->
 </FrameLayout>
 

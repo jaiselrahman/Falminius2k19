@@ -32,20 +32,14 @@ public class MainActivity extends AppCompatActivity {
 
         setUpBoomMenu();
 
-        findViewById(R.id.registerShimmer).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
-                startActivity(intent);
-            }
+        findViewById(R.id.registerShimmer).setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+            startActivity(intent);
         });
 
-        findViewById(R.id.venue).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.venue_location)));
-                startActivity(intent);
-            }
+        findViewById(R.id.venue).setOnClickListener(view -> {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.venue_location)));
+            startActivity(intent);
         });
     }
 
@@ -127,36 +121,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setUpFollowButtons() {
-        findViewById(R.id.follow_facebook).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.facebook_page)));
-                startActivity(intent);
-            }
+        findViewById(R.id.follow_facebook).setOnClickListener(view -> {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.facebook_page)));
+            startActivity(intent);
         });
 
-        findViewById(R.id.follow_instagram).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.instagram_page)));
-                startActivity(intent);
-            }
+        findViewById(R.id.follow_instagram).setOnClickListener(view -> {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.instagram_page)));
+            startActivity(intent);
         });
 
-        findViewById(R.id.follow_twitter).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.twitter_page)));
-                startActivity(intent);
-            }
+        findViewById(R.id.follow_twitter).setOnClickListener(view -> {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.twitter_page)));
+            startActivity(intent);
         });
 
-        findViewById(R.id.follow_website).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.website_page)));
-                startActivity(intent);
-            }
+        findViewById(R.id.follow_website).setOnClickListener(view -> {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.website_page)));
+            startActivity(intent);
         });
     }
 }

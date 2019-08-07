@@ -24,8 +24,6 @@ import com.ramotion.fluidslider.FluidSlider;
 import app.flaminius.flaminius2k19.util.RegisterTask;
 import app.flaminius.flaminius2k19.util.ReverseInterpolator;
 import br.com.simplepass.loadingbutton.customViews.CircularProgressButton;
-import kotlin.Unit;
-import kotlin.jvm.functions.Function1;
 
 public class RegisterActivity extends AppCompatActivity {
     private EditText name, email, phone, college;
@@ -72,28 +70,21 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void setUpPersonCountSlider() {
-        findViewById(R.id.person_count_info).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        findViewById(R.id.person_count_info).setOnClickListener(view ->
                 new AlertDialog.Builder(RegisterActivity.this)
                         .setMessage(R.string.person_count_info)
                         .setPositiveButton(android.R.string.ok, null)
-                        .show();
-            }
-        });
+                        .show());
 
         final int min = 1;
         final int max = 5;
         final int total = max - min;
 
         final FluidSlider slider = findViewById(R.id.count);
-        slider.setPositionListener(new Function1<Float, Unit>() {
-            @Override
-            public Unit invoke(Float position) {
-                personCount = (int) (min + (total * position));
-                slider.setBubbleText(String.valueOf(personCount));
-                return null;
-            }
+        slider.setPositionListener(position -> {
+            personCount = (int) (min + (total * position));
+            slider.setBubbleText(String.valueOf(personCount));
+            return null;
         });
     }
 

@@ -105,7 +105,7 @@ public class RegisterTask extends AsyncTask<RequestBody, Void, JSONObject> {
                 if (error.equals("email_already_exists")) {
                     exception = new EmailAlreadyExistException("Email already registered");
                 } else if (error.equals("phone_already_exists")) {
-                    exception = new PhoneAleadyExistsException("Phone number already registered");
+                    exception = new PhoneAlreadyExistsException("Phone number already registered");
                 } else {
                     exception = new Exception("Registration Failed!");
                 }
@@ -129,8 +129,8 @@ public class RegisterTask extends AsyncTask<RequestBody, Void, JSONObject> {
         }
     }
 
-    public static class PhoneAleadyExistsException extends Exception {
-        PhoneAleadyExistsException(String msg) {
+    public static class PhoneAlreadyExistsException extends Exception {
+        PhoneAlreadyExistsException(String msg) {
             super(msg);
         }
     }

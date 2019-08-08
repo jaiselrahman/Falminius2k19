@@ -5,7 +5,8 @@
 
     <dimen name="inner_item_offset">16dp</dimen>
     <dimen name="outer_header_height">25dp</dimen>
-    <dimen name="inner_item_height">170dp</dimen>
+    <dimen name="event_item_height">200dp</dimen>
+    <dimen name="event_image_height">100dp</dimen>
 
     <dimen name="dp10">10dp</dimen>
     <dimen name="dp120">120dp</dimen>

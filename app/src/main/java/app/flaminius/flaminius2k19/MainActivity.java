@@ -3,7 +3,6 @@ package app.flaminius.flaminius2k19;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Rect;
-import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -16,8 +15,6 @@ import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.nightonke.boommenu.BoomButtons.HamButton;
 import com.nightonke.boommenu.BoomMenuButton;
 import com.nightonke.boommenu.Util;
-
-import app.flaminius.flaminius2k19.event.EventListActivity;
 
 public class MainActivity extends AppCompatActivity {
     private final static int LAUNCH_DELAY = 120;

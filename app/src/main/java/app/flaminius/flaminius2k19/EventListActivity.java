@@ -1,4 +1,4 @@
-package app.flaminius.flaminius2k19.event;
+package app.flaminius.flaminius2k19;
 
 import android.os.Bundle;
 
@@ -12,14 +12,12 @@ import com.ramotion.garlandview.header.HeaderTransformer;
 import java.util.ArrayList;
 import java.util.List;
 
-import app.flaminius.flaminius2k19.R;
 import app.flaminius.flaminius2k19.details.DetailsActivity;
-import app.flaminius.flaminius2k19.event.inner.InnerAdapter;
-import app.flaminius.flaminius2k19.event.inner.InnerData;
-import app.flaminius.flaminius2k19.event.inner.InnerItem;
-import app.flaminius.flaminius2k19.event.outer.OuterAdapter;
+import app.flaminius.flaminius2k19.event.Event;
+import app.flaminius.flaminius2k19.event.EventAdapter;
+import app.flaminius.flaminius2k19.event.EventCategoryAdapter;
 
-public class EventListActivity extends AppCompatActivity implements InnerAdapter.OnItemClickListener {
+public class EventListActivity extends AppCompatActivity implements EventAdapter.OnItemClickListener {
     public static final String DEFAULT = "DEFAULT";
     public static final String TECHNICAL = "TECHNICAL";
     public static final String NON_TECHNICAL = "NON_TECHNICAL";
@@ -31,9 +29,9 @@ public class EventListActivity extends AppCompatActivity implements InnerAdapter
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_list);
 
-        final List<List<InnerData>> outerData = new ArrayList<>();
+        final List<List<Event>> outerData = new ArrayList<>();
         for (int i = 0; i < OUTER_COUNT; i++) {
-            final List<InnerData> innerData = new ArrayList<>();
+            final List<Event> innerData = new ArrayList<>();
             for (int j = 0; j < INNER_COUNT; j++) {
                 innerData.add(createInnerData(j));
             }
@@ -43,33 +41,33 @@ public class EventListActivity extends AppCompatActivity implements InnerAdapter
     }
 
 
-    private void initRecyclerView(List<List<InnerData>> data) {
+    private void initRecyclerView(List<List<Event>> data) {
         final TailRecyclerView rv = findViewById(R.id.recycler_view);
         ((TailLayoutManager) rv.getLayoutManager()).setPageTransformer(new HeaderTransformer());
-        rv.setAdapter(new OuterAdapter(data, this));
+        rv.setAdapter(new EventCategoryAdapter(data, this));
 
         new TailSnapHelper().attachToRecyclerView(rv);
     }
 
-    private InnerData createInnerData(int i) {
-        return new InnerData(
-                "Title " + i,
+    private Event createInnerData(int i) {
+        return new Event(
                 "Name " + i,
-                "Address " + i,
-                "image " + i,
-                i + 20
+                "TagLine " + i,
+                "Description " + i,
+                "Rules " + i,
+                "Contact Details " + i,0
         );
     }
 
     @Override
-    public void onItemClick(InnerItem item) {
-        final InnerData itemData = item.getItemData();
-        if (itemData == null) {
+    public void onItemClick(EventAdapter.EventItem item) {
+        final Event event = item.getEvent();
+        if (event == null) {
             return;
         }
 
-        DetailsActivity.start(this,
-                item.getItemData().name, item.mAddress.getText().toString(),
-                item.getItemData().avatarUrl, item.itemView, item.mAvatarBorder);
+//        DetailsActivity.start(this,
+//                item.getItemData().name, item.mAddress.getText().toString(),
+//                item.getItemData().avatarUrl, item.itemView, item.mAvatarBorder);
     }
 }

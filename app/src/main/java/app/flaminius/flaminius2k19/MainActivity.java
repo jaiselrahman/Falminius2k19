@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
 
         setUpToolbar();
 
+        setUpContacts();
+
         setUpFollowButtons();
 
         setUpBoomMenu();
@@ -136,6 +138,28 @@ public class MainActivity extends AppCompatActivity {
                     collapsingToolbar.setTitle("");
                 }
             }
+        });
+    }
+
+    private void setUpContacts() {
+        findViewById(R.id.contact_us_email).setOnClickListener(v -> {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + getString(R.string.contact_email)));
+            startActivity(intent);
+        });
+
+        findViewById(R.id.contact_us_president).setOnClickListener(v -> {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("tel:" + getString(R.string.contact_president)));
+            startActivity(intent);
+        });
+
+        findViewById(R.id.contact_us_secretary).setOnClickListener(v -> {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("tel:" + getString(R.string.contact_secretary)));
+            startActivity(intent);
+        });
+
+        findViewById(R.id.contact_us_event_coordinator).setOnClickListener(v -> {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("tel:" + getString(R.string.contact_event_coordinator)));
+            startActivity(intent);
         });
     }
 

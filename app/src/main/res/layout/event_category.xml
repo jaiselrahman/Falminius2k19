@@ -52,7 +52,6 @@
             android:id="@+id/header_alpha"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:background="@drawable/white_corners"
             android:visibility="gone" />
 
     </FrameLayout>

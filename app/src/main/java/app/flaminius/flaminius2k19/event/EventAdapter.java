@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,14 +64,16 @@ public class EventAdapter extends com.ramotion.garlandview.inner.InnerAdapter<Ev
         void onItemClick(EventItem eventItem);
     }
 
-
     public class EventItem extends com.ramotion.garlandview.inner.InnerItem {
         private final View innerLayout;
 
-        private final TextView eventName;
-        private final TextView eventTagLine;
-        private final TextView eventDescription;
-        private final ImageView eventImage;
+        public final TextView eventName;
+        public final ImageView eventImage;
+        public final CardView eventCard;
+        public final CardView eventNameCard;
+        public final TextView eventTagLine;
+        public final TextView eventDescription;
+        public final View eventDetails;
 
         private Event event;
 
@@ -78,10 +81,15 @@ public class EventAdapter extends com.ramotion.garlandview.inner.InnerAdapter<Ev
             super(itemView);
             innerLayout = ((ViewGroup) itemView).getChildAt(0);
 
-            eventName = itemView.findViewById(R.id.event_name);
-            eventTagLine = itemView.findViewById(R.id.event_tagline);
-            eventDescription = itemView.findViewById(R.id.event_description);
             eventImage = itemView.findViewById(R.id.event_image);
+            eventCard = itemView.findViewById(R.id.card);
+
+            eventNameCard = itemView.findViewById(R.id.event_name_card);
+            eventName = eventNameCard.findViewById(R.id.event_name);
+
+            eventDetails = itemView.findViewById(R.id.event_details);
+            eventTagLine = eventDetails.findViewById(R.id.event_tagline);
+            eventDescription = eventDetails.findViewById(R.id.event_description);
 
             innerLayout.setOnClickListener(view -> onItemClickListener.onItemClick(EventItem.this));
         }
@@ -102,7 +110,7 @@ public class EventAdapter extends com.ramotion.garlandview.inner.InnerAdapter<Ev
         void setContent(Event event) {
             this.event = event;
 
-            eventName.setText(event.title);
+            eventName.setText(event.name);
             eventTagLine.setText(event.tagLine);
             eventDescription.setText(event.description);
             eventImage.setImageResource(event.image);

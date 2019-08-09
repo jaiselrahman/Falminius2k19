@@ -12,7 +12,6 @@ import com.ramotion.garlandview.header.HeaderTransformer;
 import java.util.ArrayList;
 import java.util.List;
 
-import app.flaminius.flaminius2k19.details.DetailsActivity;
 import app.flaminius.flaminius2k19.event.Event;
 import app.flaminius.flaminius2k19.event.EventAdapter;
 import app.flaminius.flaminius2k19.event.EventCategoryAdapter;
@@ -55,7 +54,7 @@ public class EventListActivity extends AppCompatActivity implements EventAdapter
                 "TagLine " + i,
                 "Description " + i,
                 "Rules " + i,
-                "Contact Details " + i,0
+                "Contact Details " + i, R.drawable.details_top_background
         );
     }
 
@@ -66,8 +65,6 @@ public class EventListActivity extends AppCompatActivity implements EventAdapter
             return;
         }
 
-//        DetailsActivity.start(this,
-//                item.getItemData().name, item.mAddress.getText().toString(),
-//                item.getItemData().avatarUrl, item.itemView, item.mAvatarBorder);
+        EventDetailsActivity.show(this, item, event);
     }
 }

@@ -2,6 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:clickable="true"
@@ -21,6 +22,7 @@
             android:layout_height="@dimen/event_image_height"
             android:background="@android:color/black"
             android:scaleType="centerCrop"
+            android:translationZ="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -28,25 +30,28 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/event_name_card"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
             app:cardCornerRadius="5dp"
             app:contentPaddingLeft="15dp"
             app:contentPaddingRight="15dp"
-            app:layout_constraintBottom_toTopOf="@id/event_tagline"
+            app:layout_constraintBottom_toTopOf="@id/event_details"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0">
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_min="wrap"
+            app:layout_constraintWidth_percent="0.5">
 
             <TextView
                 android:id="@+id/event_name"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:ellipsize="end"
-                android:gravity="start"
-                android:maxLines="2"
+                android:gravity="center"
+                android:maxLines="1"
                 android:padding="5dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Title"
                 app:layout_constraintTop_toTopOf="parent"
@@ -54,30 +59,36 @@
 
         </androidx.cardview.widget.CardView>
 
-        <TextView
-            android:id="@+id/event_tagline"
+        <LinearLayout
+            android:id="@+id/event_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="5dp"
-            android:textColor="@color/textColorSecondary"
-            app:layout_constraintBottom_toTopOf="@id/event_description"
-            app:layout_constraintTop_toBottomOf="@id/event_name_card"
-            tools:text="Event tagline" />
-
-        <TextView
-            android:id="@+id/event_description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:lineSpacingExtra="2dp"
-            android:maxLines="3"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:paddingBottom="5dp"
-            android:textColor="@color/textColorTertiary"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/event_tagline"
-            tools:text="@tools:sample/lorem/random" />
+            app:layout_constraintTop_toBottomOf="@id/event_name_card">
+
+            <TextView
+                android:id="@+id/event_tagline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dp"
+                android:textColor="@color/textColorSecondary"
+                tools:text="Event tagline" />
+
+            <TextView
+                android:id="@+id/event_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:lineSpacingExtra="2dp"
+                android:maxLines="3"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="5dp"
+                android:textColor="@color/textColorTertiary"
+                tools:text="@tools:sample/lorem/random" />
+
+        </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

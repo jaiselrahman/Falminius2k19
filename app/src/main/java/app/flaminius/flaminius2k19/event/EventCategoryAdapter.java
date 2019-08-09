@@ -23,27 +23,27 @@ import app.flaminius.flaminius2k19.R;
 public class EventCategoryAdapter extends TailAdapter<EventCategoryAdapter.EventCategory> {
     private final int POOL_SIZE = 16;
 
-    private final List<List<Event>> mData;
-    private final RecyclerView.RecycledViewPool mPool;
+    private final List<List<Event>> eventLists;
+    private final RecyclerView.RecycledViewPool viewPool;
     private EventAdapter.OnItemClickListener onItemClickListener;
 
-    public EventCategoryAdapter(List<List<Event>> data, EventAdapter.OnItemClickListener onItemClickListener) {
-        this.mData = data;
+    public EventCategoryAdapter(List<List<Event>> eventLists, EventAdapter.OnItemClickListener onItemClickListener) {
+        this.eventLists = eventLists;
         this.onItemClickListener = onItemClickListener;
 
-        mPool = new RecyclerView.RecycledViewPool();
-        mPool.setMaxRecycledViews(0, POOL_SIZE);
+        viewPool = new RecyclerView.RecycledViewPool();
+        viewPool.setMaxRecycledViews(0, POOL_SIZE);
     }
 
     @Override
     public EventCategory onCreateViewHolder(ViewGroup parent, int viewType) {
         final View view = LayoutInflater.from(parent.getContext()).inflate(viewType, parent, false);
-        return new EventCategory(view, mPool, onItemClickListener);
+        return new EventCategory(view, viewPool, onItemClickListener);
     }
 
     @Override
     public void onBindViewHolder(EventCategory holder, int position) {
-        holder.setContent(mData.get(position));
+        holder.setContent(eventLists.get(position));
     }
 
     @Override
@@ -53,12 +53,12 @@ public class EventCategoryAdapter extends TailAdapter<EventCategoryAdapter.Event
 
     @Override
     public int getItemCount() {
-        return mData.size();
+        return eventLists.size();
     }
 
     @Override
     public int getItemViewType(int position) {
-        return R.layout.outer_item;
+        return R.layout.event_category;
     }
 
 

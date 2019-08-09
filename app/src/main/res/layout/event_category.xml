@@ -14,45 +14,49 @@
     <FrameLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="?attr/actionBarSize"
         android:clipChildren="false">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize">
+            android:layout_height="?attr/actionBarSize"
+            app:cardBackgroundColor="@color/event_icon_bg"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="10dp">
 
-            <TextView
-                android:id="@+id/header_text"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/event_header_bg"
-                android:ellipsize="end"
-                android:gravity="center"
-                android:maxLines="1"
-                android:text="@string/nontechnical_events"
-                android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                android:textColor="@android:color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize">
 
+                <TextView
+                    android:id="@+id/header_text"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/nontechnical_events"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@android:color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-            <ImageView
-                android:id="@+id/header_image"
-                android:layout_width="56dp"
-                android:layout_height="56dp"
-                android:contentDescription="@string/nontechnical_events"
-                android:src="@drawable/ic_nontechnical_event"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                <ImageView
+                    android:id="@+id/header_image"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:contentDescription="@string/nontechnical_events"
+                    android:src="@drawable/ic_nontechnical_event"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
 
         <View
             android:id="@+id/header_alpha"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:visibility="gone" />
+            android:layout_height="56dp" />
 
     </FrameLayout>
 

@@ -20,7 +20,8 @@ public class EventListActivity extends AppCompatActivity implements EventAdapter
     public static final String DEFAULT = "DEFAULT";
     public static final String TECHNICAL = "TECHNICAL";
     public static final String NON_TECHNICAL = "NON_TECHNICAL";
-    private final static int OUTER_COUNT = 2;
+    public static final String ONLINE = "ONLINE";
+    private final static int OUTER_COUNT = 3;
     private final static int INNER_COUNT = 10;
 
     @Override
@@ -46,6 +47,15 @@ public class EventListActivity extends AppCompatActivity implements EventAdapter
         rv.setAdapter(new EventCategoryAdapter(data, this));
 
         new TailSnapHelper().attachToRecyclerView(rv);
+
+        String eventCategory = getIntent().getStringExtra(DEFAULT);
+        if (eventCategory == null || eventCategory.equals(NON_TECHNICAL)) {
+            rv.scrollToPosition(0);
+        } else if (eventCategory.equals(TECHNICAL)) {
+            rv.scrollToPosition(1);
+        } else {
+            rv.scrollToPosition(2);
+        }
     }
 
     private Event createInnerData(int i) {

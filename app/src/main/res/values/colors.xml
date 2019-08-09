@@ -13,7 +13,7 @@
     <color name="hintColor">#27EF5350</color>
     <color name="labelColor">@color/colorPrimary</color>
 
-    <color name="nonTechnicalEvent">#34A3DA</color>
+    <color name="event_icon_bg">#34A3DA</color>
     <color name="coordinators">#BEC75C5C</color>
     <color name="gallery">#BE6ACAB3</color>
 

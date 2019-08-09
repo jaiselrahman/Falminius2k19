@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 .normalTextRes(R.string.nontechnical_events)
                 .textSize(textSize)
                 .textPadding(textPadding)
-                .normalColorRes(R.color.nonTechnicalEvent)
+                .normalColorRes(R.color.event_icon_bg)
                 .normalImageRes(R.drawable.ic_nontechnical_event)
                 .containsSubText(false)
                 .buttonCornerRadius(buttonCornerRadius)
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 .normalTextRes(R.string.technical_events)
                 .textSize(textSize)
                 .textPadding(textPadding)
-                .normalColorRes(R.color.nonTechnicalEvent)
+                .normalColorRes(R.color.event_icon_bg)
                 .normalImageRes(R.drawable.ic_technical_event)
                 .containsSubText(false)
                 .buttonCornerRadius(buttonCornerRadius)
@@ -75,6 +75,21 @@ public class MainActivity extends AppCompatActivity {
                 .listener(index -> boom.postDelayed(() -> {
                     Intent intent = new Intent(this, EventListActivity.class);
                     intent.putExtra(EventListActivity.DEFAULT, EventListActivity.TECHNICAL);
+                    startActivity(intent);
+                }, LAUNCH_DELAY)));
+
+        boom.addBuilder(new HamButton.Builder()
+                .normalTextRes(R.string.online_events)
+                .textSize(textSize)
+                .textPadding(textPadding)
+                .normalColorRes(R.color.event_icon_bg)
+                .normalImageRes(R.drawable.ic_online_event)
+                .containsSubText(false)
+                .buttonCornerRadius(buttonCornerRadius)
+                .pieceColor(Color.WHITE)
+                .listener(index -> boom.postDelayed(() -> {
+                    Intent intent = new Intent(this, EventListActivity.class);
+                    intent.putExtra(EventListActivity.DEFAULT, EventListActivity.ONLINE);
                     startActivity(intent);
                 }, LAUNCH_DELAY)));
 

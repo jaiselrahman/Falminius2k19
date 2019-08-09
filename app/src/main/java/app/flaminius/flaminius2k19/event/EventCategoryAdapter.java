@@ -121,8 +121,20 @@ public class EventCategoryAdapter extends TailAdapter<EventCategoryAdapter.Event
         void setContent(@NonNull List<Event> eventList) {
             int position = getAdapterPosition();
 
-            headerText.setText(position == 0 ? R.string.nontechnical_events : R.string.technical_events);
-            headerImage.setImageResource(position == 0 ? R.drawable.ic_nontechnical_event : R.drawable.ic_technical_event);
+            switch (position) {
+                case 0:
+                    headerText.setText(R.string.nontechnical_events);
+                    headerImage.setImageResource(R.drawable.ic_nontechnical_event);
+                    break;
+                case 1:
+                    headerText.setText(R.string.technical_events);
+                    headerImage.setImageResource(R.drawable.ic_technical_event);
+                    break;
+                case 2:
+                    headerText.setText(R.string.online_events);
+                    headerImage.setImageResource(R.drawable.ic_online_event);
+                    break;
+            }
 
             recyclerView.setLayoutManager(new InnerLayoutManager());
             ((EventAdapter) recyclerView.getAdapter()).addData(eventList);

@@ -7,7 +7,8 @@
     android:clipChildren="false"
     android:clipToPadding="false"
     android:fillViewport="true"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_main">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -34,14 +35,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:lineSpacingExtra="2dp"
+                android:lineSpacingExtra="4dp"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"
                 android:paddingBottom="10dp"
                 android:text="@string/sympo_tagline"
                 android:textAlignment="center"
-                android:textColor="#1d1d1d"
-                android:textSize="13sp" />
+                android:textSize="14sp" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView

@@ -273,9 +273,10 @@
             android:id="@+id/register"
             android:layout_width="0dp"
             android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            app:cardBackgroundColor="@color/colorPrimary"
             app:cardCornerRadius="20dp"
             app:cardElevation="5dp"
-            android:layout_marginTop="15dp"
             app:layout_constraintBottom_toTopOf="@id/follow"
             app:layout_constraintEnd_toStartOf="@id/boom_menu"
             app:layout_constraintStart_toStartOf="parent"
@@ -284,7 +285,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorPrimary"
+                android:background="?attr/selectableItemBackground"
                 android:gravity="center"
                 android:text="@string/register"
                 android:textAllCaps="false"
@@ -308,7 +309,14 @@
             app:layout_constraintBottom_toBottomOf="@id/register"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/register"
-            app:layout_constraintTop_toTopOf="@id/register" />
+            app:layout_constraintTop_toTopOf="@id/register">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_menu" />
+        </com.nightonke.boommenu.BoomMenuButton>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/follow"

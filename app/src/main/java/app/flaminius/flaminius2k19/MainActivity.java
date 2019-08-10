@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 .normalImageRes(R.drawable.ic_nontechnical_event)
                 .containsSubText(false)
                 .buttonCornerRadius(buttonCornerRadius)
-                .pieceColor(Color.WHITE)
+                .pieceColor(Color.TRANSPARENT)
                 .listener(index -> boom.postDelayed(() -> {
                     Intent intent = new Intent(this, EventListActivity.class);
                     intent.putExtra(EventListActivity.DEFAULT, EventListActivity.NON_TECHNICAL);
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
                 .normalImageRes(R.drawable.ic_technical_event)
                 .containsSubText(false)
                 .buttonCornerRadius(buttonCornerRadius)
-                .pieceColor(Color.WHITE)
+                .pieceColor(Color.TRANSPARENT)
                 .listener(index -> boom.postDelayed(() -> {
                     Intent intent = new Intent(this, EventListActivity.class);
                     intent.putExtra(EventListActivity.DEFAULT, EventListActivity.TECHNICAL);
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                 .normalImageRes(R.drawable.ic_online_event)
                 .containsSubText(false)
                 .buttonCornerRadius(buttonCornerRadius)
-                .pieceColor(Color.WHITE)
+                .pieceColor(Color.TRANSPARENT)
                 .listener(index -> boom.postDelayed(() -> {
                     Intent intent = new Intent(this, EventListActivity.class);
                     intent.putExtra(EventListActivity.DEFAULT, EventListActivity.ONLINE);
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
                 .normalImageRes(R.drawable.ic_coordinators)
                 .containsSubText(false)
                 .buttonCornerRadius(buttonCornerRadius)
-                .pieceColor(Color.WHITE));
+                .pieceColor(Color.TRANSPARENT));
 
         boom.addBuilder(new HamButton.Builder()
                 .normalTextRes(R.string.gallery)
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
                 .normalImageRes(R.drawable.ic_gallery)
                 .containsSubText(false)
                 .buttonCornerRadius(buttonCornerRadius)
-                .pieceColor(Color.WHITE));
+                .pieceColor(Color.TRANSPARENT));
     }
 
     private void setUpToolbar() {

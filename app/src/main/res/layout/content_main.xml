@@ -7,8 +7,7 @@
     android:clipChildren="false"
     android:clipToPadding="false"
     android:fillViewport="true"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/activity_main">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -110,7 +109,7 @@
             android:layout_marginTop="15dp"
             app:cardCornerRadius="20dp"
             app:cardElevation="5dp"
-            app:layout_constraintBottom_toTopOf="@id/registerShimmer"
+            app:layout_constraintBottom_toTopOf="@id/register"
             app:layout_constraintTop_toBottomOf="@id/venue">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -162,13 +161,20 @@
                     app:layout_constraintTop_toBottomOf="@id/divider" />
 
                 <TextView
+                    android:id="@+id/colon_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    app:layout_constraintStart_toEndOf="@id/contact_us_president_label"
+                    app:layout_constraintTop_toTopOf="@id/contact_us_president_label" />
+
+                <TextView
                     android:id="@+id/contact_us_president_label"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:paddingTop="2dp"
                     android:paddingBottom="2dp"
                     android:text="@string/contact_president_label"
-                    android:textAlignment="textEnd"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     app:layout_constraintEnd_toStartOf="@id/contact_us_president"
                     app:layout_constraintStart_toStartOf="parent"
@@ -196,11 +202,18 @@
                     android:paddingTop="2dp"
                     android:paddingBottom="2dp"
                     android:text="@string/contact_secretary_label"
-                    android:textAlignment="textEnd"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     app:layout_constraintEnd_toStartOf="@id/contact_us_president"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/contact_us_president" />
+
+                <TextView
+                    android:id="@+id/colon_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    app:layout_constraintStart_toEndOf="@id/contact_us_president_label"
+                    app:layout_constraintTop_toTopOf="@id/contact_us_secretary_label" />
 
                 <TextView
                     android:id="@+id/contact_us_secretary"
@@ -210,7 +223,6 @@
                     android:paddingTop="2dp"
                     android:paddingBottom="2dp"
                     android:text="@string/contact_secretary"
-                    android:textAlignment="textStart"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@color/colorAccent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -222,14 +234,22 @@
                     android:id="@+id/contact_us_event_coordinator_label"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
                     android:paddingTop="2dp"
                     android:paddingBottom="2dp"
                     android:text="@string/contact_event_coordinator_label"
-                    android:textAlignment="textEnd"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     app:layout_constraintEnd_toStartOf="@id/contact_us_president"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/contact_us_secretary" />
+
+                <TextView
+                    android:id="@+id/colon_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    app:layout_constraintStart_toEndOf="@id/contact_us_event_coordinator_label"
+                    app:layout_constraintTop_toTopOf="@id/contact_us_event_coordinator_label" />
 
                 <TextView
                     android:id="@+id/contact_us_event_coordinator"
@@ -250,39 +270,45 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/registerShimmer"
+            android:id="@+id/register"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_marginTop="15dp"
             app:cardCornerRadius="20dp"
             app:cardElevation="5dp"
+            android:layout_marginTop="15dp"
             app:layout_constraintBottom_toTopOf="@id/follow"
             app:layout_constraintEnd_toStartOf="@id/boom_menu"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/contact">
 
-            <com.facebook.shimmer.ShimmerFrameLayout
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:clipChildren="false"
-                android:clipToPadding="false"
-                app:shimmer_base_alpha="1"
-                app:shimmer_duration="1800"
-                app:shimmer_highlight_alpha="0.75"
-                app:shimmer_repeat_delay="100"
-                app:shimmer_width_ratio="2">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/colorPrimary"
-                    android:gravity="center"
-                    android:text="@string/register"
-                    android:textAllCaps="false"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="@android:color/white" />
-            </com.facebook.shimmer.ShimmerFrameLayout>
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="@string/register"
+                android:textAllCaps="false"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/white" />
         </androidx.cardview.widget.CardView>
+
+        <com.nightonke.boommenu.BoomMenuButton
+            android:id="@+id/boom_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX="0.9"
+            android:scaleY="0.9"
+            app:bmb_buttonEnum="ham"
+            app:bmb_buttonPlaceEnum="buttonPlace_ham_5"
+            app:bmb_dimColor="#EE000000"
+            app:bmb_hideDuration="250"
+            app:bmb_normalColor="@color/colorPrimary"
+            app:bmb_piecePlaceEnum="piecePlace_ham_5"
+            app:bmb_shadowColor="#66000000"
+            app:layout_constraintBottom_toBottomOf="@id/register"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/register"
+            app:layout_constraintTop_toTopOf="@id/register" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/follow"
@@ -292,7 +318,7 @@
             app:cardCornerRadius="20dp"
             app:cardElevation="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/registerShimmer">
+            app:layout_constraintTop_toBottomOf="@id/register">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -305,7 +331,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableEnd="@drawable/ic_follow"
-                    android:drawableRight="@drawable/ic_follow"
                     android:paddingTop="2dp"
                     android:paddingBottom="2dp"
                     android:text="@string/follow"
@@ -375,24 +400,5 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-
-        <com.nightonke.boommenu.BoomMenuButton
-            android:id="@+id/boom_menu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scaleX="0.9"
-            android:scaleY="0.9"
-            app:bmb_buttonEnum="ham"
-            app:bmb_buttonPlaceEnum="buttonPlace_ham_5"
-            app:bmb_dimColor="#EE000000"
-            app:bmb_hideDuration="250"
-            app:bmb_normalColor="@color/colorPrimary"
-            app:bmb_piecePlaceEnum="piecePlace_ham_5"
-            app:bmb_shadowColor="#66000000"
-            app:layout_constraintBottom_toBottomOf="@id/registerShimmer"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/sympo"
-            app:layout_constraintTop_toTopOf="@id/registerShimmer" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

@@ -85,10 +85,10 @@
 
     <string name="contact_us">Contact Us</string>
     <string name="contact_email">flaminius2k19@gmail.com</string>
-    <string name="contact_president">+91 7904013122</string>
-    <string name="contact_secretary">+91 6380667500</string>
-    <string name="contact_event_coordinator">+91 9840543412</string>
-    <string name="contact_president_label">President:&#160;</string>
-    <string name="contact_secretary_label">Secretary:&#160;</string>
-    <string name="contact_event_coordinator_label">Event Co-ordinator:&#160;</string>
+    <string name="contact_president">&#160;&#160;+917904013122</string>
+    <string name="contact_secretary">&#160;&#160;+916380667500</string>
+    <string name="contact_event_coordinator">&#160;&#160;+919840543412</string>
+    <string name="contact_president_label">President</string>
+    <string name="contact_secretary_label">Secretary</string>
+    <string name="contact_event_coordinator_label">Event Coordinator</string>
 </resources>

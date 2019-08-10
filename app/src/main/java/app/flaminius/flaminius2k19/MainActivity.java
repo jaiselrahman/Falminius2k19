@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         setUpBoomMenu();
 
-        findViewById(R.id.registerShimmer).setOnClickListener(view -> {
+        findViewById(R.id.register).setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
             startActivity(intent);
         });

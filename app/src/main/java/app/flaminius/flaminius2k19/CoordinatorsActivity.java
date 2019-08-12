@@ -49,8 +49,8 @@ public class CoordinatorsActivity extends AppCompatActivity {
         Node vicePresident = new Node(new Coordinator(R.drawable.ob_president_vice, "Rishi", "Vice President", "7338992387"));
         Node secretary = new Node(new Coordinator(R.drawable.ob_secretary, "Arun Kumar", "Secretary", "6380667500"));
         Node jointSecretary = new Node(new Coordinator(R.drawable.ob_secretary_joint, "DD", "Joint Secretary", "9150870665"));
-        Node coordinator = new Node(new Coordinator(R.drawable.ob_coordinator, "Ajith Kumar", "Coordinator", "9840543412"));
-        Node jointCoordinator = new Node(new Coordinator(R.drawable.ob_coordinator_joint, "Avinash", "Joint Coordinator", "8939069993"));
+        Node coordinator = new Node(new Coordinator(R.drawable.ob_coordinator, "Ajith Kumar", "Event Coordinator", "9840543412"));
+        Node jointCoordinator = new Node(new Coordinator(R.drawable.ob_coordinator_joint, "Avinash", "Joint Event Coordinator", "8939069993"));
         Node treasurer = new Node(new Coordinator(R.drawable.ic_call, "Vishnu Priya", "Treasurer", "000000000"));
         Node joinTreasurer = new Node(new Coordinator(R.drawable.ob_treasurer_joint, "Saravanan", "Joint Treasurer", "9600196579"));
 

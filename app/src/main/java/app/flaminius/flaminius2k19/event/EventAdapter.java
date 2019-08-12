@@ -1,5 +1,6 @@
 package app.flaminius.flaminius2k19.event;
 
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.core.text.HtmlCompat;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -112,7 +114,7 @@ public class EventAdapter extends com.ramotion.garlandview.inner.InnerAdapter<Ev
 
             eventName.setText(event.name);
             eventTagLine.setText(event.tagLine);
-            eventDescription.setText(event.description);
+            eventDescription.setText(HtmlCompat.fromHtml(event.description, HtmlCompat.FROM_HTML_MODE_LEGACY));
             eventImage.setImageResource(event.image);
         }
     }

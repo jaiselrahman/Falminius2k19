@@ -4,6 +4,8 @@ import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.TextUtils;
 import android.util.Pair;
 import android.view.View;
 import android.widget.TextView;
@@ -47,8 +49,26 @@ public class EventDetailsActivity extends AppCompatActivity {
 
         ((TextView) findViewById(R.id.event_name)).setText(event.name);
         ((TextView) findViewById(R.id.event_tagline)).setText(event.tagLine);
-        ((TextView) findViewById(R.id.event_description)).setText(event.description);
-        ((TextView) findViewById(R.id.event_rules)).setText(event.rules);
-        ((TextView) findViewById(R.id.event_contacts)).setText(event.contacts);
+
+        if (!TextUtils.isEmpty(event.description)) {
+            ((TextView) findViewById(R.id.event_description)).setText(Html.fromHtml(event.description));
+        } else {
+            findViewById(R.id.event_description).setVisibility(View.GONE);
+            findViewById(R.id.event_description_header).setVisibility(View.GONE);
+        }
+
+        if (!TextUtils.isEmpty(event.rules)) {
+            ((TextView) findViewById(R.id.event_rules)).setText(event.rules);
+        } else {
+            findViewById(R.id.event_rules).setVisibility(View.GONE);
+            findViewById(R.id.event_rules_header).setVisibility(View.GONE);
+        }
+
+        if (!TextUtils.isEmpty(event.contacts)) {
+            ((TextView) findViewById(R.id.event_contacts)).setText(event.contacts);
+        } else {
+            findViewById(R.id.event_contacts).setVisibility(View.GONE);
+            findViewById(R.id.event_contact_header).setVisibility(View.GONE);
+        }
     }
 }

@@ -1,9 +1,16 @@
 package app.flaminius.flaminius2k19.event;
 
+import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.widget.LinearLayout;
 
 import androidx.annotation.DrawableRes;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import app.flaminius.flaminius2k19.R;
 
 public class Event implements Parcelable {
     public final String name;

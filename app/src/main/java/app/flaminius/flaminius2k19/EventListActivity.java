@@ -1,8 +1,14 @@
 package app.flaminius.flaminius2k19;
 
+import android.content.Context;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.os.Bundle;
+import android.util.Log;
 
+import androidx.annotation.ArrayRes;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.TypedArrayUtils;
 
 import com.ramotion.garlandview.TailLayoutManager;
 import com.ramotion.garlandview.TailRecyclerView;
@@ -21,25 +27,19 @@ public class EventListActivity extends AppCompatActivity implements EventAdapter
     public static final String TECHNICAL = "TECHNICAL";
     public static final String NON_TECHNICAL = "NON_TECHNICAL";
     public static final String ONLINE = "ONLINE";
-    private final static int OUTER_COUNT = 3;
-    private final static int INNER_COUNT = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_list);
 
-        final List<List<Event>> outerData = new ArrayList<>();
-        for (int i = 0; i < OUTER_COUNT; i++) {
-            final List<Event> innerData = new ArrayList<>();
-            for (int j = 0; j < INNER_COUNT; j++) {
-                innerData.add(createInnerData(j));
-            }
-            outerData.add(innerData);
-        }
+        List<List<Event>> outerData = new ArrayList<>();
+        outerData.add(getEvents(R.array.non_technical_events));
+        outerData.add(getEvents(R.array.technical_events));
+        outerData.add(getEvents(R.array.online_events));
+
         initRecyclerView(outerData);
     }
-
 
     private void initRecyclerView(List<List<Event>> data) {
         final TailRecyclerView rv = findViewById(R.id.recycler_view);
@@ -58,16 +58,6 @@ public class EventListActivity extends AppCompatActivity implements EventAdapter
         }
     }
 
-    private Event createInnerData(int i) {
-        return new Event(
-                "Name " + i,
-                "TagLine " + i,
-                "Description " + i,
-                "Rules " + i,
-                "Contact Details " + i, R.drawable.details_top_background
-        );
-    }
-
     @Override
     public void onItemClick(EventAdapter.EventItem item) {
         final Event event = item.getEvent();
@@ -76,5 +66,24 @@ public class EventListActivity extends AppCompatActivity implements EventAdapter
         }
 
         EventDetailsActivity.show(this, item, event);
+    }
+
+    private List<Event> getEvents(@ArrayRes int eventCategoryId) {
+        List<Event> events = new ArrayList<>();
+
+        Resources res = getResources();
+        TypedArray ta = res.obtainTypedArray(eventCategoryId);
+
+        int n = ta.length();
+        for (int i = 0; i < n; i++) {
+            int eventsId = ta.getResourceId(i, 0);
+            if (eventsId > 0) {
+                String[] event = res.getStringArray(eventsId);
+                events.add(new Event(event[0], event[1], event[2], event[3], event[4], 0));
+            }
+        }
+        ta.recycle();
+
+        return events;
     }
 }

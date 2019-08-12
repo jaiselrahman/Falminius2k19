@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="non_technical_events">
+        <item>@array/mock_interview</item>
+        <item>@array/connect_karo</item>
+        <item>@array/football</item>
+    </array>
+
+    <array name="technical_events">
+        <item>@array/paper_boat</item>
+        <item>@array/code_hunt</item>
+        <item>@array/techno_guess</item>
+        <item>@array/web_designing</item>
+        <item>@array/mind_o_pedias</item>
+        <item>@array/google_it</item>
+        <item>@array/covert_buggy</item>
+    </array>
+
+    <array name="online_events">
+        <item>@array/snap_it_on</item>
+        <item>@array/short_film</item>
+        <item>@array/pubg</item>
+    </array>
+
+    <!-- Non Technical Events -->
+
+    <string-array name="mock_interview">
+        <item name="name">Mock Interview</item>
+        <item name="tagline"></item>
+        <item name="description"></item>
+        <item name="rules"></item>
+        <item name="contact"></item>
+    </string-array>
+
+    <string-array name="connect_karo">
+        <item name="name">Connect Karo</item>
+        <item name="tagline">Think beyond the boundaries!</item>
+        <item name="description">Take a moment to sit back and show your intensity to resilience over networks and create a connectivity. Get greared up to put forth your views!</item>
+        <item name="rules">There will be 2 rounds.\n\t1. The participants are expected to connect two or more images to get on the word.\n\t2. Individual participation is entertained.\n\tThe words given will be non-technical.</item>
+        <item name="contact">Event head: 9488079159</item>
+    </string-array>
+
+    <string-array name="football">
+        <item name="name">Football</item>
+        <item name="tagline"></item>
+        <item name="description"></item>
+        <item name="rules"></item>
+        <item name="contact"></item>
+    </string-array>
+
+    <!-- Technical Events -->
+
+    <string-array name="paper_boat">
+        <item name="name">Paper Boat</item>
+        <item name="tagline">Let your mind write your paper, not your hands.</item>
+        <item name="description"><![CDATA[
+Here is an amazing opportunity to showcase your ideas on an unique and massive platform in the form of well integrated and intriguing presentation. It strives to explore the inquisitiveness of young minds by giving their incredulous ideas a definitive direction.<br/>
+<br/>
+The topics for the paper presentation are<br/>
+&emsp;* Blockchain<br/>
+&emsp;* Cloud Computing<br/>
+&emsp;* Artificial Intelligence<br/>
+&emsp;* Machine Learning<br/>
+&emsp;* Ethical hacking<br/>
+&emsp;* Image Processing<br/>
+&emsp;* Bio Computers<br/>
+&emsp;* Augmented Reality<br/>
+&emsp;* Dark Web<br/>
+&emsp;* Other topics related to IT Industry<br/>
+<br/>
+<b> Abstract should be sent before<br/>September 10 in IEEE format.</b>
+        ]]></item>
+        <item name="rules"></item>
+        <item name="contact">Email\u00A0\u00A0\u00A0\u00A0 : flaminius@gmail.com\nSubject : Paper Presentation</item>
+    </string-array>
+
+    <string-array name="code_hunt">
+        <item name="name">Code Hunt</item>
+        <item name="tagline">Life would be much easier, if I had the source code</item>
+        <item name="description">It is true to bring out the best within a techie should be challenged. Here is the place to check out the intensity of your code thirst, get ready to explore the talent</item>
+        <item name="rules">\t* A team with 3 members can participate\n\t* This fixture consists of 2 round.\n\t* Problem statement is put out of sight to the searching guys outside the lab.\n\t* After the problem statement is found out the message is passed through mobile to the pupil in the lab.\n\t* Time span for the 1st round lasts for 10 mins and for the 2nd round be 20 mins.</item>
+        <item name="contact"></item>
+    </string-array>
+
+    <string-array name="techno_guess">
+        <item name="name">Techno Guess</item>
+        <item name="tagline">First computer virus?\nFirst web browser?\nFirst search engine?</item>
+        <item name="description"><![CDATA[
+        Far from classroom rote, this quiz is all about work of science and technology.<br/>Get ready for a roller coaster rider into the intense work of techno quizzing.
+        ]]></item>
+        <item name="rules">\t* A team with 2 members can participate.\n\t* This fixture consists of 2 rounds.\n\t* Time span for the 1st round lasts for 10 mins with 20 questions and the second round will be general quiz with 10 questions for 10 minutes.</item>
+        <item name="contact"></item>
+    </string-array>
+
+    <string-array name="web_designing">
+        <item name="name">Web Designing</item>
+        <item name="tagline"></item>
+        <item name="description"></item>
+        <item name="rules"></item>
+        <item name="contact"></item>
+    </string-array>
+
+    <string-array name="mind_o_pedias">
+        <item name="name">Mind O Pedias</item>
+        <item name="tagline">First computer virus?\nFirst web browser?\nFirst search engine?</item>
+        <item name="description"><![CDATA[
+        Far from classroom rote, this quiz is all about work of science and technology.<br/>Get ready for a roller coaster rider into the intense work of techno quizzing.
+        ]]></item>
+        <item name="rules">\t* A team with 2 members can participate.\n\t* This fixture consists of 2 rounds.\n\t* Time span for the 1st round lasts for 10 mins with 20 questions and the second round will be general quiz with 10 questions for 10 minutes.</item>
+        <item name="contact"></item>
+    </string-array>
+
+    <string-array name="google_it">
+        <item name="name">Google It</item>
+        <item name="tagline"></item>
+        <item name="description">Your mission is to crack the Riddle and figure out the word it implies.</item>
+        <item name="rules">* Only one can participate along with your mobile phone which should have a proper Internet connection\t\n* Answer need to be entered in stipulated time.\t\n* You can use Google to find out the Answer.</item>
+        <item name="contact"></item>
+    </string-array>
+
+    <string-array name="covert_buggy">
+        <item name="name">Covert Buggy</item>
+        <item name="tagline">Its not a Bug - Its an Undocumented feature</item>
+        <item name="description"></item>
+        <item name="rules">\t* In the preliminary round the participants need to resolve the bugs of pre-filled code in stipulated time.\n\t* In the Second round the participants are expected to correct the compilation error and end up with the corresponding output.\n\t* Only two participants per team are permitted.</item>
+        <item name="contact"></item>
+    </string-array>
+
+    <!-- Online -->
+
+    <string-array name="snap_it_on">
+        <item name="name">Snap It On</item>
+        <item name="tagline"></item>
+        <item name="description">Photography is the practise of photographing guests and occurrences at any Event or Occasion where one may hire a photographer for.</item>
+        <item name="rules">\t* Participant should send their snaps to our Email ID along with their Name, Year, Phone number.\n\t* Last date of this event is September 11, 2019.\n\t* Photos are selected based on likes and snaps.</item>
+        <item name="contact">Email\u00A0\u00A0\u00A0\u00A0 : flaminius@gmail.com\nSubject : Snap It On</item>
+    </string-array>
+
+    <string-array name="short_film">
+        <item name="name">Short Film</item>
+        <item name="tagline"></item>
+        <item name="description"></item>
+        <item name="rules"></item>
+        <item name="contact"></item>
+    </string-array>
+
+    <string-array name="pubg">
+        <item name="name">PUBG</item>
+        <item name="tagline"></item>
+        <item name="description"><![CDATA[
+Map\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\t\t\t\t: Erangel<br/>
+Mode\u00A0\u00A0\u00A0\t\t\t\t\t: TPP<br/>
+Match Date\t: 13th September 2019<br/>
+Match Time\t: 14:00 IST [2 PM IST]<br/>
+Entry Fee\u00A0\t\t: INR 100 per Squad<br/>
+<br/>
+<b>Procedure To Join:</b><br/>
+<br/>
+&emsp;* Entry Fee: INR 100 per Squad<br/>
+&emsp;* Payment can be done via googlepay or cash<br/>
+&emsp;* Whatsapp group will be created with one person per team.<br/>
+&emsp;* Room id and password will be send in group<br/>
+&emsp;* Check group in case of room closed<br/>
+<br/>
+<b>Note:</b><br/>
+<br/>
+    This match will only be conducted if we get at least 15 Squad registration.<br/>
+    In case this doesn’t happen we’ll refund the amount to respective team Captains.<br/>
+    &emsp;* Join the lobby 10 mins before the match starts<br/>
+    &emsp;* Match will be started exactly at the time mentioned<br/>
+    &emsp;* Take the screenshot of the result<br/>
+<br/>
+<b>Rules:</b><br/>
+<br/>
+    &emsp;* Emulators are not allowed or you will be kicked and Even if a single player violates the rules, the whole squad will be disqualified.<br/>
+    &emsp;* Hacks are not allowed.<br/>
+    &emsp;* We will provide your team with slot no, if you or your teammate join any other slot then will be kicked.<br/>
+    &emsp;* Dont try to enter the spectate area as it is only for admin.<br/>
+    &emsp;* Dont try to team up with others.<br/>
+    &emsp;* Tournament organizers decision is final.<br/>
+<br/>
+<b>Prize:</b><br/>
+<br/>
+&emsp;Prize Pool 1500 INR<br/>
+&emsp;Winning Team&ensp;: INR 1000<br/>
+&emsp;Runner-up&emsp;&emsp;: INR 500<br/>
+]]></item>
+        <item name="rules"></item>
+        <item name="contact"></item>
+    </string-array>
+</resources>

@@ -103,17 +103,11 @@ public class MainActivity extends AppCompatActivity {
                 .normalImageRes(R.drawable.ic_coordinators)
                 .containsSubText(false)
                 .buttonCornerRadius(buttonCornerRadius)
-                .pieceColor(Color.TRANSPARENT));
-
-        boom.addBuilder(new HamButton.Builder()
-                .normalTextRes(R.string.gallery)
-                .textSize(textSize)
-                .textPadding(textPadding)
-                .normalColorRes(R.color.gallery)
-                .normalImageRes(R.drawable.ic_gallery)
-                .containsSubText(false)
-                .buttonCornerRadius(buttonCornerRadius)
-                .pieceColor(Color.TRANSPARENT));
+                .pieceColor(Color.TRANSPARENT)
+                .listener(index -> boom.postDelayed(() -> {
+                    Intent intent = new Intent(this, CoordinatorsActivity.class);
+                    startActivity(intent);
+                }, LAUNCH_DELAY)));
     }
 
     private void setUpToolbar() {

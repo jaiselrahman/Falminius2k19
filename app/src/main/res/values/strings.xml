@@ -10,6 +10,9 @@
     <string name="venue">Venue</string>
     <string name="follow">Follow us on</string>
 
+    <string name="hash_tags">#MCE #IT #SEP13</string>
+    <string name="footer">Copyright &#169; Flaminius2k19</string>
+
     <!--- Follow links -->
     <string name="facebook_page">https://www.facebook.com/flaminius2k19</string>
     <string name="instagram_page">https://instagram.com/flaminius2k19</string>

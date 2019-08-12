@@ -27,6 +27,10 @@
     <string name="nontechnical_events">Non Technical Events</string>
     <string name="technical_events">Technical Events</string>
     <string name="coordinators">Coordinators</string>
+    <string name="spread_the_word">Spread the world</string>
+    <string name="share_message">Flaminius 2k19 Symposium on Sept 13 at MCE.\nRegister through https://flaminius2k19.web.app </string>
+    <string name="share_using">Share using</string>
+    <string name="share_subject">Flaminius 2k19 Symposium</string>
 
     <string name="person_count_info">Students with same preferences can register commonly or they can register individually.</string>
 

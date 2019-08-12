@@ -108,6 +108,23 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(this, CoordinatorsActivity.class);
                     startActivity(intent);
                 }, LAUNCH_DELAY)));
+
+        boom.addBuilder(new HamButton.Builder()
+                .normalTextRes(R.string.spread_the_word)
+                .textSize(textSize)
+                .textPadding(textPadding)
+                .normalColorRes(R.color.spread_the_word)
+                .normalImageRes(R.drawable.ic_spread_the_word)
+                .containsSubText(false)
+                .buttonCornerRadius(buttonCornerRadius)
+                .pieceColor(Color.TRANSPARENT)
+                .listener(index -> boom.postDelayed(() -> {
+                    Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                    sharingIntent.setType("text/plain");
+                    sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.share_subject));
+                    sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, getString(R.string.share_message));
+                    startActivity(Intent.createChooser(sharingIntent, getString(R.string.share_using)));
+                }, LAUNCH_DELAY)));
     }
 
     private void setUpToolbar() {

@@ -16,6 +16,7 @@
     <color name="event_icon_bg">#34A3DA</color>
     <color name="coordinators">#BEC75C5C</color>
     <color name="gallery">#BE6ACAB3</color>
+    <color name="spread_the_word">#BE76C2AF</color>
 
     <color name="backgroundTop">@color/colorPrimary</color>
 </resources>

@@ -8,6 +8,7 @@ import android.util.Log;
 
 import androidx.annotation.ArrayRes;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.content.res.TypedArrayUtils;
 
 import com.ramotion.garlandview.TailLayoutManager;
@@ -34,9 +35,9 @@ public class EventListActivity extends AppCompatActivity implements EventAdapter
         setContentView(R.layout.activity_event_list);
 
         List<List<Event>> outerData = new ArrayList<>();
-        outerData.add(getEvents(R.array.non_technical_events));
-        outerData.add(getEvents(R.array.technical_events));
-        outerData.add(getEvents(R.array.online_events));
+        outerData.add(getEvents(R.array.non_technical_events, R.array.non_technical_event_images));
+        outerData.add(getEvents(R.array.technical_events, R.array.technical_event_images));
+        outerData.add(getEvents(R.array.online_events, R.array.online_event_images));
 
         initRecyclerView(outerData);
     }
@@ -68,18 +69,20 @@ public class EventListActivity extends AppCompatActivity implements EventAdapter
         EventDetailsActivity.show(this, item, event);
     }
 
-    private List<Event> getEvents(@ArrayRes int eventCategoryId) {
+    private List<Event> getEvents(@ArrayRes int eventCategoryId, @ArrayRes int eventImagesId) {
         List<Event> events = new ArrayList<>();
 
         Resources res = getResources();
         TypedArray ta = res.obtainTypedArray(eventCategoryId);
+
+        TypedArray eventImages = res.obtainTypedArray(eventImagesId);
 
         int n = ta.length();
         for (int i = 0; i < n; i++) {
             int eventsId = ta.getResourceId(i, 0);
             if (eventsId > 0) {
                 String[] event = res.getStringArray(eventsId);
-                events.add(new Event(event[0], event[1], event[2], event[3], event[4], 0));
+                events.add(new Event(event[0], event[1], event[2], event[3], event[4], eventImages.getResourceId(i, 0)));
             }
         }
         ta.recycle();

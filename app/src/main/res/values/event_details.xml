@@ -3,7 +3,13 @@
     <array name="non_technical_events">
         <item>@array/mock_interview</item>
         <item>@array/connect_karo</item>
-        <item>@array/football</item>
+        <item>@array/futsal</item>
+    </array>
+
+    <array name="non_technical_event_images">
+        <item>@drawable/event_non_technical_mock_interview</item>
+        <item>@drawable/event_non_technical_connections</item>
+        <item>@drawable/event_non_technical_futsal</item>
     </array>
 
     <array name="technical_events">
@@ -16,10 +22,26 @@
         <item>@array/covert_buggy</item>
     </array>
 
+    <array name="technical_event_images">
+        <item>@drawable/event_technical_paper_boat</item>
+        <item>@drawable/event_technical_code_hunt</item>
+        <item>@drawable/event_technical_techno_guess</item>
+        <item>@drawable/event_technical_web_designing</item>
+        <item>@drawable/event_technical_mind_o_pedias</item>
+        <item>@drawable/event_technical_google_it</item>
+        <item>@drawable/event_technical_coverty_buggy</item>
+    </array>
+
     <array name="online_events">
         <item>@array/snap_it_on</item>
-        <item>@array/short_film</item>
+        <item>@array/cinema_verite</item>
         <item>@array/pubg</item>
+    </array>
+
+    <array name="online_event_images">
+        <item>@drawable/event_online_snap_it_on</item>
+        <item>@drawable/event_online_short_film</item>
+        <item>@drawable/event_online_pubg</item>
     </array>
 
     <!-- Non Technical Events -->
@@ -40,12 +62,12 @@
         <item name="contact">Event head: 9488079159</item>
     </string-array>
 
-    <string-array name="football">
-        <item name="name">Football</item>
-        <item name="tagline"></item>
+    <string-array name="futsal">
+        <item name="name">Futsal</item>
+        <item name="tagline">Everyone loses game. Few change them.</item>
         <item name="description"></item>
-        <item name="rules"></item>
-        <item name="contact"></item>
+        <item name="rules">\t* College ID is must\n\t* Last date of registration is <b>Sep 10, 2019</b>.\n\t* 5+3 players per team\n\t* Knock out based matches.\n\t* Referees decision is final.\n\t* team should be punctual for the reporting time.\n\t* For registration please contact the number given below.</item>
+        <item name="contact">Ajith Kumar\u00A0\u00A0: 9840543412\nShiva Kumar : 8056918077</item>
     </string-array>
 
     <!-- Technical Events -->
@@ -84,19 +106,19 @@ The topics for the paper presentation are<br/>
 
     <string-array name="techno_guess">
         <item name="name">Techno Guess</item>
-        <item name="tagline">First computer virus?\nFirst web browser?\nFirst search engine?</item>
+        <item name="tagline">Action speak louder than words</item>
         <item name="description"><![CDATA[
-        Far from classroom rote, this quiz is all about work of science and technology.<br/>Get ready for a roller coaster rider into the intense work of techno quizzing.
+        Tweaking it on our convenience, we challenge you charades to speak louder than workds and stun us with you 'dumb' act by registering yourselves here!
         ]]></item>
-        <item name="rules">\t* A team with 2 members can participate.\n\t* This fixture consists of 2 rounds.\n\t* Time span for the 1st round lasts for 10 mins with 20 questions and the second round will be general quiz with 10 questions for 10 minutes.</item>
+        <item name="rules">\t* Each action will have 1 min to perform\n\t* 2 to 4 members from a team should participate.\n\t* The performed acting will pass to the next team, if the team has no answer.\n\t* The actor should not act any action and individual alphabets.\n\t* The actor should not perform "singing, clipping. humming, whistling&#8230;".\n\t* The non-enrolled "teams" or "participants" will not allowed playing Dumb Charades.</item>
         <item name="contact"></item>
     </string-array>
 
     <string-array name="web_designing">
         <item name="name">Web Designing</item>
-        <item name="tagline"></item>
-        <item name="description"></item>
-        <item name="rules"></item>
+        <item name="tagline">If you think Maths is hard, try Web Design</item>
+        <item name="description">Technology over technique produces emotionless design. In consideration of exploring the art of cart, we handover to you this intimating event where the participants are expected to create an awe-inspiring web page.</item>
+        <item name="rules">\t* In the preliminary level, participants will be given a web design from which they are expected to guess the correct code.\n\t* Participants qualified for the next level will be given a theme for which an exceptional website must be created.</item>
         <item name="contact"></item>
     </string-array>
 
@@ -136,12 +158,12 @@ The topics for the paper presentation are<br/>
         <item name="contact">Email\u00A0\u00A0\u00A0\u00A0 : flaminius@gmail.com\nSubject : Snap It On</item>
     </string-array>
 
-    <string-array name="short_film">
-        <item name="name">Short Film</item>
-        <item name="tagline"></item>
-        <item name="description"></item>
-        <item name="rules"></item>
-        <item name="contact"></item>
+    <string-array name="cinema_verite">
+        <item name="name">Cinema Verite</item>
+        <item name="tagline">The way to find a needle in a hay stacks is to sit down</item>
+        <item name="description">Do you have the pristine and unexplored themes that will stimulate the audience to sit up and think? Or the fiery dialogues that can cause rapturous silence followed by momentous applause? This is the platform just for you and only you can do it..!</item>
+        <item name="rules">\t* Entries must be in .mp4 format.\n\t* Total running time must be less than 5 minutes, including front and back credits.\n\t* No abusive content is permitted.\n\t* The competition is open only for students.\n\t* The last date for submission is <b>Sep 11, 2019</b>.\n\t* Post your entries to flaminius2k19@gmail.com</item>
+        <item name="contact">Email\u00A0\u00A0\u00A0\u00A0 : flaminius@gmail.com\nSubject : Short film</item>
     </string-array>
 
     <string-array name="pubg">

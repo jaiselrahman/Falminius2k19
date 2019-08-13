@@ -8,6 +8,7 @@ import android.text.Html;
 import android.text.TextUtils;
 import android.util.Pair;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -49,6 +50,7 @@ public class EventDetailsActivity extends AppCompatActivity {
 
         ((TextView) findViewById(R.id.event_name)).setText(event.name);
         ((TextView) findViewById(R.id.event_tagline)).setText(event.tagLine);
+        ((ImageView) findViewById(R.id.event_image)).setImageResource(event.image);
 
         if (!TextUtils.isEmpty(event.description)) {
             ((TextView) findViewById(R.id.event_description)).setText(Html.fromHtml(event.description));

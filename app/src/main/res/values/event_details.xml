@@ -34,7 +34,7 @@
 
     <array name="online_events">
         <item>@array/snap_it_on</item>
-        <item>@array/cinema_verite</item>
+        <item>@array/short_film</item>
         <item>@array/pubg</item>
     </array>
 
@@ -48,9 +48,9 @@
 
     <string-array name="mock_interview">
         <item name="name">Mock Interview</item>
-        <item name="tagline"></item>
-        <item name="description"></item>
-        <item name="rules"></item>
+        <item name="tagline">It is good to rub and polish our brains against that of others.</item>
+        <item name="description">How comfortable are you with your interview skills? Get ready to grab the rostrum and dazzle the audience with your technical proficiency and amaze the world with your knowledge.!</item>
+        <item name="rules">\t* Each technical domain each topic\'s or the sub category topics should be categorized.\n\t* From each domain 10 set of questions will be asked in the from of interview.\n\t* Each set will be allocated and will be framed.\n\t* Every domain questions will be asked as the interview procedure.\n\t* Each question contains a set of marks.\n\t* Students will be awarded as per the correct answers.</item>
         <item name="contact"></item>
     </string-array>
 
@@ -158,8 +158,8 @@ The topics for the paper presentation are<br/>
         <item name="contact">Email\u00A0\u00A0\u00A0\u00A0 : flaminius@gmail.com\nSubject : Snap It On</item>
     </string-array>
 
-    <string-array name="cinema_verite">
-        <item name="name">Cinema Verite</item>
+    <string-array name="short_film">
+        <item name="name">Short Film</item>
         <item name="tagline">The way to find a needle in a hay stacks is to sit down</item>
         <item name="description">Do you have the pristine and unexplored themes that will stimulate the audience to sit up and think? Or the fiery dialogues that can cause rapturous silence followed by momentous applause? This is the platform just for you and only you can do it..!</item>
         <item name="rules">\t* Entries must be in .mp4 format.\n\t* Total running time must be less than 5 minutes, including front and back credits.\n\t* No abusive content is permitted.\n\t* The competition is open only for students.\n\t* The last date for submission is <b>Sep 11, 2019</b>.\n\t* Post your entries to flaminius2k19@gmail.com</item>

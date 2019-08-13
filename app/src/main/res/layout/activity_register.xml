@@ -116,33 +116,6 @@
                 android:paddingEnd="0dp" />
 
             <TextView
-                android:id="@+id/person_count_info"
-                style="@style/Label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableEnd="@drawable/ic_info"
-                android:drawableRight="@drawable/ic_info"
-                android:drawablePadding="5dp"
-                android:labelFor="@id/count"
-                android:text="@string/person_count" />
-
-            <com.ramotion.fluidslider.FluidSlider
-                android:id="@+id/count"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-20dp"
-                android:layout_marginBottom="5dp"
-                app:bar_color="@color/hintColor"
-                app:bar_text_color="@color/labelColor"
-                app:bubble_color="@color/labelColor"
-                app:bubble_text_color="@android:color/white"
-                app:end_text="5"
-                app:initial_position="0"
-                app:size="small"
-                app:start_text="0"
-                app:text_size="14sp" />
-
-            <TextView
                 style="@style/Label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

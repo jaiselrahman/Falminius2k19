@@ -32,11 +32,8 @@
     <string name="share_using">Share using</string>
     <string name="share_subject">Flaminius 2k19 Symposium</string>
 
-    <string name="person_count_info">Students with same preferences can register commonly or they can register individually.</string>
-
     <string name="event">Event</string>
     <string name="food_preferences">Food Preferences</string>
-    <string name="person_count">Person count</string>
     <string name="department">Department</string>
     <string name="college">College</string>
     <string name="email">Email</string>

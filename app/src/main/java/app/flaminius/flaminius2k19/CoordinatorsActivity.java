@@ -51,7 +51,7 @@ public class CoordinatorsActivity extends AppCompatActivity {
         Node jointSecretary = new Node(new Coordinator(R.drawable.ob_secretary_joint, "DD", "Joint Secretary", "9150870665"));
         Node coordinator = new Node(new Coordinator(R.drawable.ob_coordinator, "Ajith Kumar", "Event Coordinator", "9840543412"));
         Node jointCoordinator = new Node(new Coordinator(R.drawable.ob_coordinator_joint, "Avinash", "Joint Event Coordinator", "8939069993"));
-        Node treasurer = new Node(new Coordinator(R.drawable.ic_call, "Vishnu Priya", "Treasurer", "000000000"));
+        Node treasurer = new Node(new Coordinator(R.drawable.ob_treasurer, "Vishnu Priya", "Treasurer", "6379201604"));
         Node joinTreasurer = new Node(new Coordinator(R.drawable.ob_treasurer_joint, "Saravanan", "Joint Treasurer", "9600196579"));
 
         graph.addEdge(president, secretary);

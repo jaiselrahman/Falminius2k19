@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "464616869255",
+    "firebase_url": "https://flaminius2k19.firebaseio.com",
+    "project_id": "flaminius2k19",
+    "storage_bucket": "flaminius2k19.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:464616869255:android:0700e0ea75301fed",
+        "android_client_info": {
+          "package_name": "app.flaminius.flaminius2k19"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "464616869255-t9fumo98vnv2g97pt4ehi7pi3fva0ua9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxoC0l_PEhP9_U_AxXuH--F7v5D06sRyw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "464616869255-t9fumo98vnv2g97pt4ehi7pi3fva0ua9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

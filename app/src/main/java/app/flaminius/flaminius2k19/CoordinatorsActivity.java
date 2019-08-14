@@ -1,20 +1,19 @@
 
 package app.flaminius.flaminius2k19;
 
-import androidx.annotation.DrawableRes;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.otaliastudios.zoom.ZoomApi;
+import androidx.annotation.DrawableRes;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import de.blox.graphview.BaseGraphAdapter;
 import de.blox.graphview.Graph;
@@ -48,10 +47,10 @@ public class CoordinatorsActivity extends AppCompatActivity {
         Node president = new Node(new Coordinator(R.drawable.ob_president, "Vignesh", "President", "7904013122"));
         Node vicePresident = new Node(new Coordinator(R.drawable.ob_president_vice, "Rishi", "Vice President", "7338992387"));
         Node secretary = new Node(new Coordinator(R.drawable.ob_secretary, "Arun Kumar", "Secretary", "6380667500"));
-        Node jointSecretary = new Node(new Coordinator(R.drawable.ob_secretary_joint, "Divya Dharshini", "Joint Secretary", "9150870665"));
+        Node jointSecretary = new Node(new Coordinator(R.drawable.ob_secretary_joint, "Divya Dharshini", "Joint Secretary", null));
         Node coordinator = new Node(new Coordinator(R.drawable.ob_coordinator, "Ajith Kumar", "Event Coordinator", "9840543412"));
         Node jointCoordinator = new Node(new Coordinator(R.drawable.ob_coordinator_joint, "Avinash", "Joint Event Coordinator", "8939069993"));
-        Node treasurer = new Node(new Coordinator(R.drawable.ob_treasurer, "Vishnu Priya", "Treasurer", "6379201604"));
+        Node treasurer = new Node(new Coordinator(R.drawable.ob_treasurer, "Vishnu Priya", "Treasurer", null));
         Node joinTreasurer = new Node(new Coordinator(R.drawable.ob_treasurer_joint, "Saravanan", "Joint Treasurer", "9600196579"));
 
         graph.addEdge(president, secretary);
@@ -99,7 +98,7 @@ public class CoordinatorsActivity extends AppCompatActivity {
             designation = itemView.findViewById(R.id.designation);
 
             itemView.setOnClickListener((v) -> {
-                if (coordinator == null) return;
+                if (coordinator == null || TextUtils.isEmpty(coordinator.phone)) return;
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("tel:" + coordinator.phone));
                 v.getContext().startActivity(intent);
             });

@@ -116,7 +116,6 @@ public class RegisterActivity extends AppCompatActivity {
                 .setPhone(phone.getText().toString())
                 .setCollege(college.getText().toString())
                 .setDepartment(department)
-                .setPersonCount("1")
                 .setFoodPreference(foodPref)
                 .register(this, new RegisterTask.OnCompletionListener() {
                     @Override

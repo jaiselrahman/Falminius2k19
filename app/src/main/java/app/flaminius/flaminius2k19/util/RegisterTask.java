@@ -47,11 +47,6 @@ public class RegisterTask extends AsyncTask<RequestBody, Void, JSONObject> {
         return this;
     }
 
-    public RegisterTask setPersonCount(@NonNull String personCount) {
-        formBodyBuilder.add("Person Count", personCount);
-        return this;
-    }
-
     public RegisterTask setFoodPreference(@NonNull String foodPreference) {
         formBodyBuilder.add("Food Preference", foodPreference);
         return this;

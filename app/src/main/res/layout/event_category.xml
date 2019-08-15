@@ -34,6 +34,7 @@
                     android:layout_height="match_parent"
                     android:ellipsize="end"
                     android:gravity="center"
+                    android:layout_marginStart="42dp"
                     android:maxLines="1"
                     android:text="@string/nontechnical_events"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"

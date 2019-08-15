@@ -13,8 +13,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.bumptech.glide.Glide;
-
 import app.flaminius.flaminius2k19.event.Event;
 import app.flaminius.flaminius2k19.event.EventAdapter;
 
@@ -52,10 +50,7 @@ public class EventDetailsActivity extends AppCompatActivity {
 
         ((TextView) findViewById(R.id.event_name)).setText(event.name);
         ((TextView) findViewById(R.id.event_tagline)).setText(event.tagLine);
-
-        Glide.with(this)
-                .load(event.image)
-                .into((ImageView) findViewById(R.id.event_image));
+        ((ImageView) findViewById(R.id.event_image)).setImageResource(event.image);
 
         if (!TextUtils.isEmpty(event.description)) {
             ((TextView) findViewById(R.id.event_description)).setText(Html.fromHtml(event.description));

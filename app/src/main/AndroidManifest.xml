@@ -29,13 +29,11 @@
         <activity android:name=".MainActivity" />
         <activity
             android:name=".RegisterActivity"
-            android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustNothing" />
         <activity android:name=".EventDetailsActivity" />
         <activity
             android:name=".CoordinatorsActivity"
-            android:label="@string/coordinators"
-            android:theme="@style/AppTheme" />
+            android:label="@string/coordinators"/>
     </application>
 
 </manifest>

@@ -6,11 +6,14 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -19,7 +22,6 @@ import androidx.core.util.PatternsCompat;
 
 import com.jaiselrahman.hintspinner.HintSpinner;
 import com.jaiselrahman.hintspinner.HintSpinnerAdapter;
-import com.ramotion.fluidslider.FluidSlider;
 
 import app.flaminius.flaminius2k19.util.RegisterTask;
 import app.flaminius.flaminius2k19.util.ReverseInterpolator;
@@ -47,6 +49,25 @@ public class RegisterActivity extends AppCompatActivity {
 
         setUpFoodPrefSpinner();
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.activity_register, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.menu_registration_fee) {
+            new AlertDialog.Builder(this)
+                    .setTitle(R.string.registration_fee)
+                    .setMessage(R.string.registration_fee_info)
+                    .setPositiveButton(android.R.string.ok, null)
+                    .show();
+            return false;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void setUpFoodPrefSpinner() {

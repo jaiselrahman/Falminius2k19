@@ -40,6 +40,10 @@
     <string name="name">Name</string>
     <string name="phone">Phone</string>
 
+    <string name="registration_fee_amount">\u20B9200/-</string>
+    <string name="registration_fee">Registration Fee</string>
+    <string name="registration_fee_info">The registration amount of \u20B9200/- should be paid on spot at the time of symposium.</string>
+
     <string name="error_enter_name">Enter your name</string>
     <string name="error_enter_college">Enter you college name</string>
     <string name="error_enter_email">Enter valid email</string>

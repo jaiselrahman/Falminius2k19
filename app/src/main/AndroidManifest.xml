@@ -16,9 +16,10 @@
             android:name="firebase_crashlytics_collection_enabled"
             android:value="false" />
 
-        <activity android:name=".EventListActivity" />
         <activity
             android:name=".SplashActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="userPortrait"
             android:theme="@style/AppTheme.NoActionBar.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,15 +27,34 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="userPortrait" />
+
         <activity
             android:name=".RegisterActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="userPortrait"
             android:windowSoftInputMode="adjustNothing" />
-        <activity android:name=".EventDetailsActivity"
-            android:theme="@style/AppTheme.NoActionBar.Translucent"/>
+
+        <activity
+            android:name=".EventListActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="userPortrait" />
+
+        <activity
+            android:name=".EventDetailsActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="userPortrait"
+            android:theme="@style/AppTheme.NoActionBar.Translucent" />
+
         <activity
             android:name=".CoordinatorsActivity"
-            android:label="@string/coordinators"/>
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/coordinators"
+            android:screenOrientation="userPortrait" />
     </application>
 
 </manifest>

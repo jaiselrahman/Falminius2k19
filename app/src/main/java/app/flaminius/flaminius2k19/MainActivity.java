@@ -176,8 +176,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void setUpFollowButtons() {
         findViewById(R.id.follow_facebook).setOnClickListener(view -> {
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.facebook_page)));
-            startActivity(intent);
+            try {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.facebook_page_id)));
+                startActivity(intent);
+            } catch (Exception e) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.facebook_page)));
+                startActivity(intent);
+            }
         });
 
         findViewById(R.id.follow_instagram).setOnClickListener(view -> {

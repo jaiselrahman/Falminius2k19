@@ -21,7 +21,6 @@ import java.util.List;
 import app.flaminius.flaminius2k19.R;
 
 public class EventCategoryAdapter extends TailAdapter<EventCategoryAdapter.EventCategory> {
-    private final int POOL_SIZE = 16;
 
     private final List<List<Event>> eventLists;
     private final RecyclerView.RecycledViewPool viewPool;
@@ -32,7 +31,6 @@ public class EventCategoryAdapter extends TailAdapter<EventCategoryAdapter.Event
         this.onItemClickListener = onItemClickListener;
 
         viewPool = new RecyclerView.RecycledViewPool();
-        viewPool.setMaxRecycledViews(0, POOL_SIZE);
     }
 
     @Override

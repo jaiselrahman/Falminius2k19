@@ -30,7 +30,8 @@
         <activity
             android:name=".RegisterActivity"
             android:windowSoftInputMode="adjustNothing" />
-        <activity android:name=".EventDetailsActivity" />
+        <activity android:name=".EventDetailsActivity"
+            android:theme="@style/AppTheme.NoActionBar.Translucent"/>
         <activity
             android:name=".CoordinatorsActivity"
             android:label="@string/coordinators"/>

@@ -39,20 +39,21 @@ public class EventListActivity extends AppCompatActivity implements EventAdapter
     }
 
     private void initRecyclerView(List<List<Event>> data) {
-        final TailRecyclerView rv = findViewById(R.id.recycler_view);
-        ((TailLayoutManager) rv.getLayoutManager()).setPageTransformer(new HeaderTransformer());
+        TailRecyclerView rv = findViewById(R.id.recycler_view);
+        TailLayoutManager tailLayoutManager = (TailLayoutManager) rv.getLayoutManager();
+        tailLayoutManager.setPageTransformer(new HeaderTransformer());
         rv.setAdapter(new EventCategoryAdapter(data, this));
-
-        new TailSnapHelper().attachToRecyclerView(rv);
 
         String eventCategory = getIntent().getStringExtra(DEFAULT);
         if (eventCategory == null || eventCategory.equals(NON_TECHNICAL)) {
             rv.scrollToPosition(0);
         } else if (eventCategory.equals(TECHNICAL)) {
-            rv.scrollToPosition(1);
+            rv.post(() -> rv.scrollBy(rv.getWidth() - (tailLayoutManager.getItemStart() * 2), 0));
         } else {
-            rv.scrollToPosition(2);
+            rv.post(() -> rv.scrollBy(rv.getWidth() * 2, 0));
         }
+
+        new TailSnapHelper().attachToRecyclerView(rv);
     }
 
     @Override
